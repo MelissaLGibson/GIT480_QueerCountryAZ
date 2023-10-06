@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Queer Country AZ</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+        </script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+        </script>
+        <!--[if lt IE 9 ]><script src="http://html5shim.googlecode.com/svn/trunk/html.js">
+        </script><![end if]-->
+    </head>
+    <body class="scroll">
+       
+        <header class="item-01">
+            <h1>Queer Country AZ</h1>
+            <a id="top"></a>
+            <nav class="nav-dropdown">
+                <h2 class="hidden">Main Navigation</h2>
+                <input type="checkbox" id="nav-dropdown">
+                <label for="nav-dropdown"><span></span></label>
+                <ul>
+                    <li class="red"><a href="index.html">Home</a></li>
+                    <li class="orange"><a href="artists.html">Artists</a></li>
+                    <li class="yellow"><a href="shows.html">Shows</a></li>
+                    <li class="green"><a href="venues.html">Venues</a></li>
+                    <li class="blue"><a href="about.html">About</a></li>
+                    <li class="violet"><a href="connect.html">Connect</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Connect</h2>
+            <p class="note">
+                <strong>**PLEASE NOTE FOR SENIOR PROJECT**</strong><br>
+                This form IS functional. However, clicking SEND will return a 405 (Not Allowed) Error because Github does not allow server side actions.
+            </p>
+            <p>Please fill in the form below and we will be in touch with you soon!</p>
+            <form id="form-01" name="form-01" action="form_handler.php" method="post">
+                <fieldset>
+                    <label for="firstname" class="questions">First Name</label><br>
+                    <input type="text" id="name" name="name" placeholder=" Enter your name..."><br><br>
+                    <label for="lastname" class="questions">Last Name</label><br>
+                    <input type="text" id="name" name="name" placeholder=" Enter your name..."><br><br>
+                    <label for="email" class="questions">Email</label><br>
+                    <input type="text" id="email" name="email" placeholder=" Enter you email address..."><br><br>
+                        <label for="textarea" class="questions">Message Us</label>
+                        <textarea name="textarea" maxlength="240" id="textarea" placeholder="Enter your message"></textarea>
+                        <br><br>
+                        <input type="submit" value="Send" class="contactButton">
+                    
+                </fieldset>
+            </form>
+        </main>
+        <footer class="item-07">
+            <a href="#top">Back to the Top</a><br>
+            <small>Copyright © QueerCountryAZ 202</small>
+        </footer>
+    </body>
+</html>

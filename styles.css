@@ -1,0 +1,773 @@
+/*
+COLOR PALETTE
+
+    NEUTRALS 
+    #0D0D0D  charcoal
+    #F2F2F2  off white - color
+    #fff7c0  aged white - html background
+    #404528  dark green - body-background
+    #0E434D  dark teal - box - shadow
+    #232530  darker blue - border / text-shadow
+
+    DESERRT RAINBOW
+    #BF6565  red
+    #e87042D orange
+    #f7d278  yellow
+    #82903d  green
+    #17525d  blue
+    #8C707A  violet
+
+FONT FAMILIES
+    font-family: 'Gochi Hand', cursive; - headers 
+    font-family: 'Reem Kufi Fun', sans-serif; - copy
+    
+
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Start Code*/
+/*
+    SMALL/MOBILE LAYOUT
+*/
+@media screen and (min-width: 320px){
+
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: #404528;
+    margin: 3%;
+}
+body{
+    color: #F2F2F2;
+    margin: 0 auto;
+    border-radius: 5px;
+    max-width:767px;
+    font-size: 20px;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content-1"
+    "content-2"
+    "content-3" 
+    "content-4"
+    "content-5"
+    "footer";
+    grid-gap: 0px;
+    padding: 0px;
+}
+header {
+    font-family: 'Dela Gothic One', cursive;
+
+}
+h1, 
+h2,
+h3 {
+    width: 100%;
+    font-size: 35px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, #BF6565, #e87042, #f7d278, #82903d, #17525d, #8C707A);
+    border-radius: 5px;
+    border: 2px solid #232530;
+    text-align: center;
+    text-shadow: 2px 2px #232530;
+}
+h2,
+h3,
+section label {
+    font-size: 30px;
+    margin: 0 auto;
+    background-image: none;
+    border-radius: 0px;
+    border: 0;
+    box-shadow: none;
+    text-align: center;
+    text-shadow: 2px 2px #232530;
+}
+h3, 
+section label,
+.home-nav {
+    font-size: 25px;
+}
+h1,
+h2,
+h3,
+section label {
+    font-family: 'Dela Gothic One', cursive;
+    padding: 10px 0px 20px 0px;
+}
+p, 
+q, 
+figcaption,
+dt,
+form,
+footer,
+small
+{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-size: 18px;
+    padding: 15px 10px;
+    text-align: center;
+    text-shadow: 2px 1px 2px #232530;
+    line-height: 150%;
+}
+.note {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: rgba(130, 144, 61, 20%);
+}
+a:link  {
+    text-decoration: none;
+    color: #F2F2F2;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 18px;
+    padding: 15px 10px;
+    text-align: center;
+    text-shadow: 1px 1px #232530;
+}
+a:hover {
+    font-size: 20px;
+}
+a:visited{
+    color:#f7d278;
+    text-decoration: wavy;
+}
+#top {
+    top: 0;
+}
+.hidden {
+    visibility: collapse;
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
+.item-02,
+.item-03,
+.item-04,
+.item-05,
+.item-06{
+    border-radius: 5px;
+    border: 2px solid #232530;
+    box-shadow: 3px 3px 10px #0E434D;   
+}
+.item-01 { 
+grid-area: header;
+}.item-02 { 
+grid-area: content-1;
+}.item-03 { 
+grid-area: content-2; 
+}.item-04 {
+grid-area: content-3;
+}
+.item-05 { 
+grid-area: content-4; 
+}
+.item-06 { 
+grid-area: content-5; 
+}
+.item-07 { 
+grid-area: footer; 
+}
+nav {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    width: 100px;
+    position: absolute;
+    height: 100%;
+}
+/* START nav-dropdown */
+nav ul {
+    visibility: collapse;
+    overflow: hidden;
+    max-height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: #F2F2F2;
+    padding:0;
+    padding: 3px 3px 0px 3px;
+    border-radius: 5px;
+    border: 3px solid #232530;
+    box-shadow: 3px 3px 10px #0E434D; 
+    
+}
+nav ul li {
+    text-decoration: none;
+    list-style-type: none;
+    padding-bottom: 15px;
+}
+nav ul li a {
+    padding: 10px;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    
+}
+nav label span {
+    background-color: #f2f2f2;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 30px;
+    
+}
+nav label span:before, label span:after {
+    background: #f2f2f2;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+nav label span:before {
+    top: 5px;
+    text-align: left;
+}
+nav label span:after {
+    top: -5px;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 500px;
+    visibility: visible;
+}
+nav input ~ ul li{
+    width: 0px;
+    border-radius: 5px;
+    border: 2px solid #232530;
+    text-align: center;
+    margin-bottom: 5px;
+}
+nav input:checked ~ ul li{
+    transition: all .33s ease-in-out;
+    width: 320px;
+    padding: 20px;
+}
+nav input:checked ~ label span {
+    background: transparent;
+}
+nav input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+nav input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+nav input:checked ~ label:not(.steps) span:before, nav input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+/*
+    end nav dropdown
+    START HOME PAGE NAV
+*/
+
+ul {
+    visibility: visible;
+    overflow: hidden;
+    background-color: transparent;
+    padding:0;
+    border: none;
+    box-shadow: none; 
+    text-align: center;
+    height: auto;
+}
+ul li {
+    padding: 6% 0;
+    border-radius: 5px;
+    border: 3px solid #232530;
+    box-shadow: 3px 3px 10px #0E434D; 
+    margin-bottom: 1%;
+}
+/*
+    end hom page nav
+    START MAIN
+*/
+main {
+    color: #F2F2F2;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    margin-bottom: 1%;
+    border: none;
+    box-shadow: none; 
+}
+main > h2 {
+    margin-bottom: 10px;
+}
+section {
+    margin: 5px 0;
+    text-align: center;
+}
+/*
+    RAINBOW GRADIENT
+*/
+.rainbow {
+    background-image: linear-gradient(to right, #BF6565, #e87042, #f7d278, #82903d, #17525d, #8C707A);
+}
+.red{
+    background-color:#BF6565;
+}.red:hover{
+    background-color:#D18A8B;
+}
+.orange{
+    background-color:#e87042;
+}.orange:hover{
+    background-color:#F77845;
+}
+.yellow{
+    background-color:#f7ce66;
+}.yellow:hover{
+    background-color:#FAE19B;
+}
+.green{
+    background-color:#82903d;
+}.green:hover{
+    background-color:#8F9E42;
+}
+.blue{
+    background-color:#17525d;
+}.blue:hover{
+    background-color:#1B5F6B;
+}
+.violet{
+    background-color:#8C707A;
+}.violet:hover{
+    background-color:#9C7C87;
+}
+/* END Rainbow Gradient */
+/* 
+   dropdown-grid
+*/
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 3%;
+
+}
+section dl {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+section #venues-dropdown {
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+section dl dt, section dl dd {
+    padding-bottom: 15px;
+    text-align: center;
+}
+section label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+section input {
+    display: none;
+}
+section input:checked ~ dl {
+    max-height: 600px;
+    text-align: center;
+}
+section input ~ dl dt, dl dd {
+    transition: all .33s ease-in-out;
+    text-align: center;
+}
+section input:checked ~ dl dt, dl dd{
+    width: 100%;
+    text-align: center;
+}
+/* 
+    VENUES PAGE
+*/
+#venues-dropdown {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+#venues-dropdown img {
+    width: 100%;
+}
+/* 
+    SCROLL BAR
+*/
+.scroll ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+.scroll ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #fff7c0;
+    border-radius: 5px;
+}
+.scroll ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, #BF6565, #e87042, #f7d278, #82903d, #17525d, #8C707A);
+    border-radius: 5px;
+    border: 1px solid #0E434D;
+}
+.scroll ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom, #8C707A, #17525d, #82903d, #f7d278, #e87042, #BF6565);
+}
+
+/*
+    FORM
+*/
+form {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px;
+    text-align: left;
+}
+form p {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    width: 80%;
+    margin: 0 auto;
+}
+.contactButton{
+    background-image: linear-gradient(to right, #BF6565, #e87042, #f7d278, #82903d, #17525d, #8C707A);
+    color: #F2F2F2;
+    width: 50%;
+    padding: 2%;
+    margin: 0 25%;
+    border-radius: 25px;
+    border: 2px solid  #232530;
+    box-shadow: 2px 2px #0E434D;
+    text-shadow: 2px 2px #232530;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Dela Gothic One', cursive;
+}
+textarea {
+    width: 100%;
+    height: 200px;
+}
+#message {
+    height: 200px;
+}
+form input {
+    border-radius: 5px;
+    margin:0px;
+    padding:10px;
+    width: 100%;
+}
+
+/* 
+    ARTIST PAGE
+*/
+dt img {
+    width: 75%;
+    height: auto;
+    padding: 0px;
+    margin: 0 20px;
+    border-radius: 50%;
+    border: 5px solid #232530;
+    box-shadow: 3px 3px 10px #0E434D;   
+}
+dd div {
+    margin: 5% 0;
+}
+dl dd {
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+.icon {
+    height: 33px;
+    width: 33px;
+}
+footer {
+    text-align: center;
+    padding: 10%;
+}
+/* END ARTISTS PAGE */
+/* 
+    SHOWS
+*/
+figure {
+    width: 100%;
+    margin: 5% auto;
+}
+figure img {
+    width: 100%;
+}
+figcaption {
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    background-color: rgba(143, 158, 66, 50%);
+    text-shadow: 2px 1px 2px #0D0D0D;
+}
+.home-grid {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+}
+
+
+/*
+    MEDIUM/TABLET LAYOUT
+*/
+@media screen and (min-width: 768px){
+body{
+
+    max-width: 1023px;
+}
+nav ul{
+    height: 424px;
+}
+/*
+    .HOME-NAV
+*/
+.home-nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5%;
+}
+ul {
+    height: 350px;
+}ul li {
+    padding: 5%;
+    padding-top: 7%;
+}
+textarea {
+    height: 250px;
+}
+/* 
+    ARTISTS PAGE
+*/
+.dropdown-grid {
+    grid-template-columns: 50% 50%;
+    grid-gap: 0;
+}
+dl {
+    margin: 0 auto;
+}
+dt img {
+    width: 325px; 
+}
+dl dd {
+    padding: 40px 40px 40px 20px;
+    margin: 0 auto;
+}
+/* 
+    SHOWS PAGE
+*/
+#venues-dropdown img {
+    width: 75%;
+}
+
+/* 
+    SHOWS PAGE
+*/
+figure {
+    width: 80%;
+}
+figure img {
+    width: 100%;
+}
+figcaption {
+    padding: 25px;
+    text-align: center;
+}
+/*
+    ABOUT PAGE
+*/
+section.img-gallery {
+    height:25%;
+}
+.img-gallery {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 3%;
+    height: auto;
+}
+.img-gallery img {
+    width: 100%;
+    margin: 0px
+}
+}
+/*
+    LARGE/DESKTOP LAYOUT
+*/
+@media screen and (min-width: 1024px){
+body{
+    max-width: 1024px;
+}
+textarea {
+    height: 300px;
+}
+header {
+    margin: 0;
+}
+/*
+    .HOME-NAV
+*/
+.home-nav{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5%;
+}
+ul {
+    height: 400px;
+    margin-top: 5%;
+}ul li {
+    padding: 5%;
+    padding-top: 21%;
+}
+/* 
+    NAVIGATION
+*/
+nav {
+    width: 1024px;
+    height: 100px;
+    position: relative;
+}
+.nav-dropdown ul {
+    width: 1024px;
+    height: 100px;
+
+}
+.nav-dropdown ul li {
+    padding: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+
+
+
+
+/* START nav-dropdown */
+nav ul {
+    visibility: visible;
+    overflow: hidden;
+    max-height: 100px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    padding:0;
+    padding-right: 10%;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none; 
+    margin: 0 auto;
+}
+nav ul li {
+    text-decoration: none;
+    list-style-type: none;
+    float: left;
+    margin: 2% 8%;
+}
+
+
+nav label {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+nav input ~ ul {
+    max-height: 75px;
+    visibility: visible;
+    text-align: center;
+
+}
+nav input ~ ul li{
+    width: 0px;
+    border-radius: 0px;
+    border: none;
+    right: 5%;
+
+}
+
+/* 
+    ARTIST PAGE
+*/
+
+.dropdown-grid {
+    grid-template-columns: auto auto;
+}
+dt img {
+    width: 450px;
+}
+dd div {
+    margin-top: 10%;
+}
+
+/*
+    ABOUT PAGE
+*/
+.img-gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 3%;
+}
+.img-gallery img {
+    width: 100%;
+    margin: 0px
+}
+/*
+    SHOWS PAGE
+*/
+
+
+}
